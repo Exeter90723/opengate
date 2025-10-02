@@ -49,10 +49,18 @@
     function openGate() {
       const correctPassword = "90723";  // Your secret PIN
       let entered = document.getElementById("passwordInput").value;
-
+      
       if (entered === correctPassword) {
-        // Redirect browser to IFTTT webhook URL
-        window.location.href = "https://maker.ifttt.com/trigger/Exeter%20gate/with/key/j39esEZ7rMAEbAok3OPiUM1lyMJB73TOOyJj1KJJZBa";
+        // Use the URL-encoded version of your IFTTT webhook
+        fetch("https://maker.ifttt.com/trigger/Exeter%20gate/with/key/j39esEZ7rMAEbAok3OPiUM1lyMJB73TOOyJj1KJJZBa")
+          .then(response => {
+            if (response.ok) {
+              alert('✅ Gate Triggered!');
+            } else {
+              alert('❌ Failed to trigger gate. Response not OK.');
+            }
+          })
+          .catch(error => alert('❌ Error triggering gate: ' + error));
       } else {
         alert("❌ Wrong password. Access denied.");
       }
@@ -60,4 +68,3 @@
   </script>
 </body>
 </html>
-
