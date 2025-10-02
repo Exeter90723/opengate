@@ -51,9 +51,8 @@
       let entered = document.getElementById("passwordInput").value;
       
       if (entered === correctPassword) {
+          alert("✅ Correct PIN. Opening gate...");
           window.location.href = "https://maker.ifttt.com/trigger/exeter_gate/with/key/j39esEZ7rMAEbAok3OPiUM1lyMJB73TOOyJj1KJJZBa";
-          .then(response => alert('✅ Gate Triggered!'))
-          .catch(error => alert('❌ Error triggering gate.'));
       } else {
         alert("❌ Wrong password. Access denied.");
       }
@@ -61,3 +60,4 @@
   </script>
 </body>
 </html>
+
