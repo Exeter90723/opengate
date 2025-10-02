@@ -51,7 +51,7 @@
       let entered = document.getElementById("passwordInput").value;
       
       if (entered === correctPassword) {
-        window.location.href = ("https://maker.ifttt.com/trigger/Exetergate/with/key/j39esEZ7rMAEbAok3OPiUM1lyMJB73TOOyJj1KJJZBa")
+          fetch("https://maker.ifttt.com/trigger/Exetergate/with/key/j39esEZ7rMAEbAok3OPiUM1lyMJB73TOOyJj1KJJZBa")
           .then(response => alert('✅ Gate Triggered!'))
           .catch(error => alert('❌ Error triggering gate.'));
       } else {
