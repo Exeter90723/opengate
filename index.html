@@ -43,15 +43,15 @@
 <body>
   <h1>Secure Gate Control</h1>
   <input id="passwordInput" type="password" placeholder="Enter PIN">
-  <button onclick="Exeter%20gate()">OPEN GATE</button>
+  <button onclick="exeter_gate()">OPEN GATE</button>
 
   <script>
-    function Exeter%20gate() {
+    function exeter_gate() {
       const correctPassword = "9779";  // <--- Change this to your secret PIN
       let entered = document.getElementById("passwordInput").value;
       
       if (entered === correctPassword) {
-          fetch("https://maker.ifttt.com/trigger/Exeter%20gate/with/key/j39esEZ7rMAEbAok3OPiUM1lyMJB73TOOyJj1KJJZBa")
+          window.location.href = "https://maker.ifttt.com/trigger/exeter_gate/with/key/j39esEZ7rMAEbAok3OPiUM1lyMJB73TOOyJj1KJJZBa";
           .then(response => alert('✅ Gate Triggered!'))
           .catch(error => alert('❌ Error triggering gate.'));
       } else {
